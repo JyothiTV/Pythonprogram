@@ -1,0 +1,37 @@
+
+series = [0, 1]
+lst=[]
+n=int(input("Enter length of th list\n"))
+print("enter the elements into the list one element per line")
+for i in range(0,n):
+ item=int(input())
+ lst.append(item)
+
+def compute_series(lst):
+     print(lst)
+     for i in range(2,20):
+                 series.append(2*series[i-1]-2*series[i-2])
+     print(series)
+
+
+def is_part_of_series(lst):
+ count=0
+ i=0
+ j=0
+ for j in range(0,len(series)):
+      if(i<len(lst)):
+          if(lst[i]==series[j]):
+            i=i+1
+            count=count+1
+          else:
+            count=0
+
+ if(count==len(lst)):
+      print("List elements are part of functional series f(n)=2*f(n-1)-2*f(n-2)")
+ else:
+      print("List element are not part of functional series f(n)=2*f(n-1)-2*f(n-2)")
+
+compute_series(lst)
+is_part_of_series(series)
+
+
